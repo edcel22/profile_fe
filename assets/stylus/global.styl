@@ -1,0 +1,100 @@
+@import 'fonts'
+
+$primary = #3e8ef7
+$secondary = #f15928
+$bg = #F6F9FD
+$text_color = #505669
+$primary_btn = #3656F5
+
+/**
+ * GLOBAL CSS RESET FOR WEB BROWSER */
+html
+    -webkit-text-size-adjust: none
+    -webkit-font-smoothing: subpixel-antialiased
+    backface-visibility: hidden
+
+body
+    overflow-x: hidden
+    background-color: $bg
+    &.cms
+    &.no_click
+        pointer-events: none
+    &.no_scroll
+        overflow: hidden
+
+*,
+*:before,
+*:after
+    box-sizing: border-box
+    margin: 0
+*
+    font-family: "Open Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif
+    font-weight: normal
+
+button
+    outline: none
+
+input,
+input:before,
+input:after,
+textarea,
+textarea:before,
+textarea:after,
+select,
+select:before,
+select:after
+    user-select: initial
+    color: $text_color
+a,
+p
+    display: block
+    text-decoration: none
+    color: $text_color
+
+span
+    font-weight: 300
+
+input:focus
+    outline: none
+
+h1,
+h2,
+h3,
+h4,
+h5
+    font-weight: normal
+
+ul
+    list-style: none
+    padding: 0
+    margin: 0
+
+/**
+ * Buttons */
+.primary_button
+    display: inline-block
+    font-size: 14px
+    color: white
+    padding: 5px 10px
+    border: 1px solid $primary_btn
+    background-color: $primary_btn
+    border-radius: 20px
+    box-shadow: 0 0 20px transparent
+    text-align: center
+    transform: translateY(0)
+    transition: .3s ease-in-out
+    cursor: pointer
+    &:hover
+        box-shadow: 0 0 20px #939393
+        color: white !important
+        transition: .3s ease-in-out
+
+.box
+    width: 100%
+    border-radius: 10px
+    background-color: white
+    box-shadow: 1px 0px 5px 0px rgba(0,0,0,0.10)
+    margin-bottom: 30px
+    &.padding
+        padding: 20px
+

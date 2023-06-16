@@ -1,0 +1,50 @@
+@font-face
+    font-family: 'Poppins-Black'
+    src: url('../fonts/Poppins-Black.woff2') format('woff2'),
+        url('../fonts/Poppins-Black.woff') format('woff'),
+        url('../fonts/Poppins-Black.eot'),
+        url('../fonts/Poppins-Black.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Poppins-Black.ttf') format('truetype')
+    font-weight: 900
+    font-style: normal
+    font-display: auto
+
+@font-face
+    font-family: 'Poppins-Medium'
+    src: url('../fonts/Poppins-Medium.woff2') format('woff2'),
+        url('../fonts/Poppins-Medium.woff') format('woff'),
+        url('../fonts/Poppins-Medium.eot'),
+        url('../fonts/Poppins-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Poppins-Medium.ttf') format('truetype')
+    font-weight: 500
+    font-style: normal
+    font-display: auto
+
+@font-face
+    font-family: 'Poppins-Bold'
+    src: url('../fonts/Poppins-Bold.woff2') format('woff2'),
+        url('../fonts/Poppins-Bold.woff') format('woff'),
+        url('../fonts/Poppins-Bold.eot'),
+        url('../fonts/Poppins-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Poppins-Bold.ttf') format('truetype')
+    font-weight: bold
+    font-style: normal
+    font-display: auto
+
+poppins_black(size, uppercaseStatus)
+    font-family: Poppins-Black
+    font-size: size
+    if uppercaseStatus
+        text-transform: uppercase
+        
+poppins_medium(size, uppercaseStatus)
+    font-family: Poppins-Medium
+    font-size: size
+    if uppercaseStatus
+        text-transform: uppercase
+
+poppins_bold(size, uppercaseStatus)
+    font-family: Poppins-Bold
+    font-size: size
+    if uppercaseStatus
+        text-transform: uppercase
