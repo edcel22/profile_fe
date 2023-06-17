@@ -66,9 +66,10 @@
         .navlinks
           ul
             display: flex
+            padding-left: 20px
             li
               padding: 5px
-              margin: 0 10px
+              margin: 0 5px
               a
                 font-weight: 300
       .right
@@ -82,7 +83,7 @@
             align-items: flex-end
             p
               &.name
-                font-weight: 600px
+                font-weight: 600
             .email
               font-size: 12px
               color: #6881F8

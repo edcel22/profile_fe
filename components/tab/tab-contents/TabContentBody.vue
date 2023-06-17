@@ -1,46 +1,16 @@
 <template>
   <div class="tab_body">
     <div class="main_details box">
-      <div class="intro_information">
-        <div class="user_image">
-          <div class="image_wrapper">
-            <img src="/user_image.png" alt="" />
-          </div>
-        </div>
-        <div class="infos">
-          <div class="name_job">
-            <h2 class="name">Edcel Estadola</h2>
-            <p class="job_title">Full Stack Developer</p>
-          </div>
-          <div class="school">
-            <img src="/graduation-cap-solid.svg" alt="">
-            <span>Bachelor of Science in Information Technology</span>
-          </div>
-          <div class="extras">
-            <div class="item">
-              <img src="/briefcase-solid.svg" alt="">
-              <span>12 years</span>
-            </div>
-            <div class="item">
-              <img src="/calendar-regular.svg" alt="">
-              <span>Immediately</span>
-            </div>
-            <div class="item">
-              <img src="/peso-sign-solid.svg" alt="">
-              <span>Php 00, 000</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="other_details">
-        <!-- General Details -->
-        <Detail :detail="general_details" />
-        <!-- Professional Status -->
-        <Detail :detail="professional_status" />
-        <!-- Preference -->
-        <Detail :detail="preferences" />
-      </div>
+      <!-- Introduction Details -->
+      <IntroductionDetail />
+      <!-- General Details -->
+      <Detail :detail="profile.general_details" />
+      <!-- Professional Status -->
+      <Detail :detail="profile.professional_status" />
+      <!-- Preference -->
+      <Detail :detail="profile.preferences" />
     </div>
+
     <div class="extra_details">
       <section id="video_introduction" class="box">
         <div class="title">Video Introduction</div>
@@ -60,10 +30,7 @@
         <div class="success_message">
           <h2 class="label">Well done, Reyven!</h2>
           <img src="/success_icon.png" alt="">
-          <div class="message">
-            <p>You have one of the strongest professional profile in our talen pool.</p>
-            <p>Expect progress on your applciation at any time soon.</p>
-          </div>
+          <div class="message" v-html="profile.note"></div>
         </div>
       </section>
 
@@ -78,9 +45,9 @@
         <div class="recommendation_container">
           <div class="reco_title" @click="show_reco ^= true">Show Recommendation</div>
           <div class="reco_details" v-if="show_reco">
-            <p>Fill-up the following items to strengthen your profile. This can help us in matching your profile and increase your chances of landing into your desired role.</p>
+            <p>{{ profile.recommendations.title }}</p>
             <ul class="list">
-              <li>Pre Employment Leaves</li>
+              <li v-for="(item, index) in profile.recommendations.items">{{ item }}</li>
             </ul>
           </div>
         </div>
@@ -94,6 +61,7 @@
   export default {
     components: {
       Detail: () => import('~/components/tab/tab-contents/tab-content-body/Detail'),
+      IntroductionDetail: () => import('~/components/tab/tab-contents/tab-content-body/IntroductionDetail'),
     },
     data () {
       return {
@@ -102,9 +70,7 @@
     },
     computed: {
       ...mapGetters({
-        general_details: 'data/details/getGeneralDetails',
-        professional_status: 'data/details/getProfessionalStatus',
-        preferences: 'data/details/getPreferences'
+        profile: 'data/details/getProfileDetails'
       })
     },
   }
@@ -168,9 +134,6 @@
             align-items: center
             font-size: 14px
             font-weight: 400
-      .other_details
-        display: flex
-        flex-direction: column
     .extra_details
       width: 100%
       flex: 0 0 calc(300px - 30px)
