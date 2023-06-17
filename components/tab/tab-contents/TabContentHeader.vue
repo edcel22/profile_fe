@@ -17,12 +17,9 @@
           <div class="link_icon" v-html="item.icon"></div>
           <div class="extras">
             <p>{{ item.label }}</p>
-            <div :class="`progress ${(item.percentage <= 33.33) ? 'low' : (item.percentage <= 99) ? 'mid' : 'success'}`">
-              <div class="line">
-                <div class="line_prog"></div>
-              </div>
-              <span class="percentage" style="top: -4px; right: -37px;">{{item.percentage}}%</span>
-            </div>
+            <ProgressBar 
+              :percentage="item.percentage"
+            />
           </div>
         </li>
       </ul>
@@ -33,6 +30,9 @@
   import { mapGetters } from 'vuex'
 
   export default {
+    components: {
+      ProgressBar: () => import('~/components/global/ProgressBar'),
+    },
     computed: {
       ...mapGetters({
         profile_processes: 'data/links/getProfileProcesses',
@@ -90,10 +90,14 @@
       padding: 20px
       ul
         display: flex
+        flex-flow: row wrap
         li
           display: flex
           align-items: center
           flex: 1 0 25%
+          @media(max-width: 1000px)
+            flex: 1 0 50%
+            margin-bottom: 10px
           .link_icon
             width: 40px
             height: 40px

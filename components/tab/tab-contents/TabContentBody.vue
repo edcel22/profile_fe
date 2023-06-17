@@ -21,12 +21,10 @@
 
       <section id="profile_completion" class="box padding">
         <div class="title">Profile Completion</div>
-        <div class="progress success">
-          <div class="line">
-            <div class="line_prog"></div>
-          </div>
-          <span class="percentage">100%</span>
-        </div>
+        <ProgressBar 
+          :percentage="100"
+          :is_label_below="true"
+        />
         <div class="success_message">
           <h2 class="label">Well done, Reyven!</h2>
           <img src="/success_icon.png" alt="">
@@ -36,12 +34,10 @@
 
       <section id="profile_completion" class="box padding">
         <div class="title">Profile Completion</div>
-        <div class="progress mid">
-          <div class="line">
-            <div class="line_prog"></div>
-          </div>
-          <span class="percentage">50%</span>
-        </div>
+        <ProgressBar 
+          :percentage="50"
+          :is_label_below="true"
+        />
         <div class="recommendation_container">
           <div class="reco_title" @click="show_reco ^= true">Show Recommendation</div>
           <div class="reco_details" v-if="show_reco">
@@ -61,6 +57,7 @@
   export default {
     components: {
       Detail: () => import('~/components/tab/tab-contents/tab-content-body/Detail'),
+      ProgressBar: () => import('~/components/global/ProgressBar'),
       IntroductionDetail: () => import('~/components/tab/tab-contents/tab-content-body/IntroductionDetail'),
     },
     data () {
@@ -78,11 +75,12 @@
 <style lang="stylus">
   .tab_body
     display: flex
-    flex-flow: row wrap
     width: 100%
     .main_details
       width: 100%
       flex: 1 0 calc( 100% - 300px)
+      @media(max-width: 1000px)
+        flex: 1 0 100%
       .intro_information
         display: flex
         flex-flow: row wrap

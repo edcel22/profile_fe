@@ -28,7 +28,6 @@
       margin: 100px 20px 0
       .tab_container
         display: flex
-        flex-flow: row wrap
         width: 100%
 </style>
 

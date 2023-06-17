@@ -31,6 +31,8 @@
 </script>
 <style lang="stylus">
   .details
+    display: flex
+    flex-flow: column
     position: relative
     padding: 20px
     border-bottom: 1.5px solid rgba(0,0,0,0.122)

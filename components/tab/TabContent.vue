@@ -17,7 +17,7 @@
 <style lang="stylus">
   .tab_content
     display: flex
-    flex-flow: column wrap
+    flex-direction: column
     width: 100%
     flex: 1 0 calc(100% - 220px)
 </style>
