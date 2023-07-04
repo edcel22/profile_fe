@@ -1,14 +1,10 @@
 <template>
   <div class="tabs_navigation">
     <div class="applicant_profile">
-      <Links 
-        :items="profile_processes"
-      />
+      <Links :items="profile_processes" />
     </div>
     <div class="tab_links">
-      <Links 
-        :items="navigation_links"
-      />
+      <Links :items="navigation_links" />
     </div>
     <div class="short_info">
       <p>Copyright 2018 - 2023. All Rights Reserved</p>
@@ -22,7 +18,6 @@
 <script>
   import { mapGetters } from 'vuex'
   import Links from '~/components/tab/tab-navigation/Links'
-
   export default {
     components: {
       Links
