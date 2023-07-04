@@ -6,9 +6,9 @@
       />
     </div>
     <div class="tab_links">
-  <Links 
-    :items="navigation_links"
-  />
+      <Links 
+        :items="navigation_links"
+      />
     </div>
     <div class="short_info">
       <p>Copyright 2018 - 2023. All Rights Reserved</p>
