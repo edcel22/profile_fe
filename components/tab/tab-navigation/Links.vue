@@ -1,7 +1,8 @@
 <template>
   <ul>
     <li v-for="(item, index) in items">
-      <nuxt-link to="" :exact-active-class="(item.slug == 'profile') ? 'exact' : ''" :active-class="(item.slug == 'profile') ? 'active' : ''" >
+      <nuxt-link to="" :exact-active-class="(item.slug == 'profile') ? 'exact' : ''"
+        :active-class="(item.slug == 'profile') ? 'active' : ''">
         <div class="link_icon" v-html="item.icon"></div>
         <span>{{ item.tab_name }}</span>
       </nuxt-link>
@@ -9,19 +10,19 @@
   </ul>
 </template>
 <script>
-  export default {
-    props: {
-      items: {
-        type: Array,
-        default: [],
-        required: true,
-      },
-      sample: {
-        type: String,
-        default: 'wow'
-      }
+export default {
+  props: {
+    items: {
+      type: Array,
+      default: [],
+      required: true,
+    },
+    sample: {
+      type: String,
+      default: 'wow'
     }
   }
+}
 </script>
 <style lang="stylus" scoped>
   ul
