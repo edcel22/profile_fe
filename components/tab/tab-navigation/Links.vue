@@ -14,7 +14,11 @@
       items: {
         type: Array,
         default: [],
-        required: true
+        required: true,
+      },
+      sample: {
+        type: String,
+        default: 'wow'
       }
     }
   }
