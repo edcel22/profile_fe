@@ -27,7 +27,7 @@
         profile_processes: 'data/links/getProfileProcesses',
         navigation_links: 'data/links/getNavigationLinks'
       })
-    },
+    }
   }
 </script>
 <style lang="stylus">
