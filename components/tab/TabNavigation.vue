@@ -9,8 +9,9 @@
       <Links 
         :items="navigation_links"
       />
+      {{ wlsjkldfs }}
     </div>
-    <div class="short_info">
+    <div class="short_info"
       <p>Copyright 2018 - 2023. All Rights Reserved</p>
       <div class="links">
         <nuxt-link to="">Terms of Use</nuxt-link>
